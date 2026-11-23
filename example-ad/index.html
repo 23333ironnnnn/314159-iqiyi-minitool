@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>车票背面</title>
+  <style>
+    body { margin: 0; background: #f3f1e9; color: #20231e; font: 18px/1.65 system-ui, sans-serif; }
+    main { max-width: 30rem; margin: auto; padding: 15vh 1.5rem 3rem; }
+    button { font: inherit; padding: .6rem 1rem; }
+  </style>
+  <script id="sdk" async src="https://static-d.iqiyi.com/webplatform/jssdk/iqiyi.js"></script>
+  <script defer src="reward.js"></script>
+</head>
+<body>
+  <main>
+    <h1>车票背面</h1>
+    <p>你在末班车上睡着了。到站时，司机把一张折起来的旧车票放进你手心。</p>
+    <button id="read" type="button" hidden>看广告，读车票背面的留言</button>
+    <p id="status" role="status">故事已读完。在爱奇艺 App 内可尝试解锁留言。</p>
+    <p id="bonus" hidden>「上次你坐过站，是我忘了叫你。今天这趟算我的。」</p>
+  </main>
+</body>
+</html>

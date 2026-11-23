@@ -15,6 +15,7 @@ from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
 
 
 LIMIT = 20_000_000  # 平台写作 20 MB，按十进制字节检查。
+IQIYI_SDK = "https://static-d.iqiyi.com/webplatform/jssdk/iqiyi.js"
 EXAMPLE = Path(__file__).resolve().parent / "example"
 COMMON_DEV_FILES = {
     "node_modules", "package.json", "package-lock.json", "yarn.lock", "pnpm-lock.yaml",
@@ -64,6 +65,8 @@ class Page(HTMLParser):
             self.context = tag
         for key, value in attrs:
             if not value:
+                continue
+            if tag == "script" and key == "src" and value.strip() == IQIYI_SDK:
                 continue
             if tag == "base" and key == "href" and value != "./":
                 raise ValueError(f"{self.name} 请将 base href 调为 ./ 或移除并使用相对路径")
